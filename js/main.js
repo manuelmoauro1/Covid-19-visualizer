@@ -111,7 +111,7 @@ function iniciarPagina() {
                             document.getElementById("alignDiv").appendChild(newDC);
     
                             let newTD = document.createElement("p");
-                            newTD.innerHTML = "Total casos confirmados: " + json.Countries[i].TotalDeaths;
+                            newTD.innerHTML = "Total muertes confirmadas: " + json.Countries[i].TotalDeaths;
                             document.getElementById("alignDiv").appendChild(newTD);
     
                             let newRC = document.createElement("p");
