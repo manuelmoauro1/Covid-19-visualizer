@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid Visualizer</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/main.js"></script>
+</head>
+<body>
+    <h1>Covid-19 Visualizer</h1>
+    <div class="wrapper">
+        <article class="datosGlobales">
+            <h2>Datos globales</h1>
+            <button id="obtenerGlobales" class="btn btn-primary">Obtener datos gloales</button>
+            <p>Nuevos casos confirmados: <span id="globalNuevosCasos"></span></p>
+            <p>Total casos confirmados: <span id="globalTotalCasos"></span></p>
+            <p>Nuevas muertes confirmadas: <span id="globalNuevasMuertes"></span></p>
+            <p>Total muertes confirmadas: <span id="globalTotalMuertes"></span></p>
+            <p>Nuevos casos recuperados: <span id="globalNuevosRecuperados"></span></p>
+            <p>Total casos recuperados: <span id="globalTotalRecuperados"></span></p>
+        </article>
+        
+    
+        <div class="container" class="datosGlobales">
+            <input class="input" type="text" id="inputUser" placeholder="Ingrese el codigo de un pais, ejemplo: AR">
+            <button id="obtenerSegunUser">Obtener</button>
+    
+            <article id="datosUser">
+                
+            </article>
+        </div>
+        <p id="texto"></p>
+
+    </div>
+    
+    
+    
+</body>
+</html>
