@@ -36,6 +36,7 @@ function iniciarPagina() {
             try {
                 let response = await fetch(url);
                 if(response.ok) {
+                    document.getElementById("datosUser").innerHTML = " ";
                     let json = await response.json();
                     for(let i = 0; i < json.Countries.length; i++) {
                         if (json.Countries[i].CountryCode == inputUser) {
@@ -75,7 +76,7 @@ function iniciarPagina() {
                             espaciado.innerHTML = "---------------------------------------------";
                             document.getElementById("alignDiv").appendChild(espaciado);
                         }
-                    }  
+                    }
                     parrafoTexto.innerHTML = "Ultima actualizacion: " + json.Date;
                 }
             }
@@ -87,6 +88,7 @@ function iniciarPagina() {
             try {
                 let response = await fetch(url);
                 if(response.ok) {
+                    document.getElementById("datosUser").innerHTML = " ";
                     let json = await response.json();
                     for(let i = 0; i < json.Countries.length; i++) {
                         if (json.Countries[i].Country == inputUser1) {
