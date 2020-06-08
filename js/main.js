@@ -71,10 +71,6 @@ function iniciarPagina() {
                             let newTR = document.createElement("p");
                             newTR.innerHTML = "Total casos confirmados: " + json.Countries[i].TotalRecovered;
                             document.getElementById("alignDiv").appendChild(newTR);
-    
-                            let espaciado = document.createElement("p");
-                            espaciado.innerHTML = "---------------------------------------------";
-                            document.getElementById("alignDiv").appendChild(espaciado);
                         }
                     }
                     parrafoTexto.innerHTML = "Ultima actualizacion: " + json.Date;
@@ -123,10 +119,7 @@ function iniciarPagina() {
                             let newTR = document.createElement("p");
                             newTR.innerHTML = "Total casos confirmados: " + json.Countries[i].TotalRecovered;
                             document.getElementById("alignDiv").appendChild(newTR);
-    
-                            let espaciado = document.createElement("p");
-                            espaciado.innerHTML = "---------------------------------------------";
-                            document.getElementById("alignDiv").appendChild(espaciado);
+
                         }
                     }  
                     parrafoTexto.innerHTML = "Ultima actualizacion: " + json.Date;
