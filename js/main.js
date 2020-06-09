@@ -26,7 +26,6 @@ function iniciarPagina() {
             parrafoTexto.innerHTML = "Error al obtener los datos. Intente de nuevo mas tarde.";
         }
     }
-
     // obtenerPaisUser sirve para obtener los datos segun el pais que ingresa el usuario. El usuario
     // puede agregar paises de dos maneras: Con un codigo de dos caracteres EN MAYUSCULA (Lo converto yo)
     // o puede agregar el pais con el nombre, para eso EL USUARIO debe respetar las mayusculas.
@@ -72,7 +71,7 @@ function iniciarPagina() {
                             document.getElementById("alignDiv").appendChild(newRC);
     
                             let newTR = document.createElement("p");
-                            newTR.innerHTML = "Total casos confirmados: " + json.Countries[i].TotalRecovered;
+                            newTR.innerHTML = "Total casos recuperados: " + json.Countries[i].TotalRecovered;
                             document.getElementById("alignDiv").appendChild(newTR);
                         }
                     }
@@ -121,7 +120,7 @@ function iniciarPagina() {
                             document.getElementById("alignDiv").appendChild(newRC);
     
                             let newTR = document.createElement("p");
-                            newTR.innerHTML = "Total casos confirmados: " + json.Countries[i].TotalRecovered;
+                            newTR.innerHTML = "Total casos recuperados: " + json.Countries[i].TotalRecovered;
                             document.getElementById("alignDiv").appendChild(newTR);
                         }
                     }  
