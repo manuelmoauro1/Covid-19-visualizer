@@ -3,13 +3,12 @@ function iniciarPagina() {
     "use strict";
     document.getElementById("obtenerGlobales").addEventListener("click", obtenerGlobales);
     document.getElementById("obtenerSegunUser").addEventListener("click", obtenerPaisUser);
-
     const url = "https://api.covid19api.com/summary";
     const parrafoTexto = document.getElementById("texto");
     
     async function obtenerGlobales() {
         document.getElementById("texto").innerHTML = "Obteniendo datos...";
-        
+        // Agrego al html los valores globales actuales.
         try {
             let response = await fetch(url);
             if (response.ok) {
@@ -28,18 +27,22 @@ function iniciarPagina() {
         }
     }
 
+    // obtenerPaisUser sirve para obtener los datos segun el pais que ingresa el usuario. El usuario
+    // puede agregar paises de dos maneras: Con un codigo de dos caracteres EN MAYUSCULA (Lo converto yo)
+    // o puede agregar el pais con el nombre, para eso EL USUARIO debe respetar las mayusculas.
     async function obtenerPaisUser() {
-        const inputUser1 = document.getElementById("inputUser").value;
-        const inputUser = inputUser1.toUpperCase();
+        const inputUser = document.getElementById("inputUser").value;
+        const inputUserToUpper = inputUser.toUpperCase();
         parrafoTexto.innerHTML = "Obteniendo los datos...";
-        if (inputUser.length == 2) {
+        //Agrego al HTML segun lo que es usuario ingreso, mediante codigo "alpha" de dos caracteres
+        if (inputUserToUpper.length == 2) {
             try {
                 let response = await fetch(url);
                 if(response.ok) {
                     document.getElementById("datosUser").innerHTML = " ";
                     let json = await response.json();
                     for(let i = 0; i < json.Countries.length; i++) {
-                        if (json.Countries[i].CountryCode == inputUser) {
+                        if (json.Countries[i].CountryCode == inputUserToUpper) {
                             let newDiv = document.createElement("div");
                             newDiv.id = "alignDiv";
                             document.getElementById("datosUser").appendChild(newDiv);
@@ -80,7 +83,8 @@ function iniciarPagina() {
                 parrafoTexto.innerHTML = "Error al obtener los datos. Intente de nuevo mas tarde" ;
             }
         }
-        else if(inputUser1.length > 2) {
+        else if(inputUser.length > 2) {
+            //Agrego al HTML segun lo que es usuario ingreso, mediante el nombre del pais. El nombre del pais debe tener las mayusculas
             try {
                 let response = await fetch(url);
                 if(response.ok) {
@@ -119,7 +123,6 @@ function iniciarPagina() {
                             let newTR = document.createElement("p");
                             newTR.innerHTML = "Total casos confirmados: " + json.Countries[i].TotalRecovered;
                             document.getElementById("alignDiv").appendChild(newTR);
-
                         }
                     }  
                     parrafoTexto.innerHTML = "Ultima actualizacion: " + json.Date;
@@ -128,12 +131,10 @@ function iniciarPagina() {
             catch {
                 parrafoTexto.innerHTML = "Error al obtener los datos. Intente de nuevo mas tarde" ;
             }
-
         }
         else {
             parrafoTexto.innerHTML =
-             "Por favor escriba bien el codigo del pais.<br> Si no lo conoces puedes encontrarlo en: https://www.iban.com/country-codes";
-        }
-        
+             "Por favor escriba bien el codigo del pais.<br> Si no lo conoces, puedes encontrarlo en: https://www.iban.com/country-codes";
+        } 
     }
 }

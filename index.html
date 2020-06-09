@@ -9,10 +9,14 @@
 </head>
 <body>
     <h1>Covid-19 Visualizer</h1>
+    <div class="instrucciones">
+        <p class="datos">Para poder buscar un pais, debes ingresar el codigo de dos letras,<br> por ejemplo: AR, US, o tambien puedes escribir el nombre del pais,<br> respetando las mayusculaa, ejemplo: Argentina, Brazil.</p>
+    </div>
+
     <div class="wrapper">
-        <article class="datosGlobales">
+        <article class="datos">
             <h2>Datos globales</h1>
-            <button id="obtenerGlobales" class="btn btn-primary">Obtener datos gloales</button>
+            <button id="obtenerGlobales" class="btns">Obtener datos gloales</button>
             <p>Nuevos casos confirmados: <span id="globalNuevosCasos"></span></p>
             <p>Total casos confirmados: <span id="globalTotalCasos"></span></p>
             <p>Nuevas muertes confirmadas: <span id="globalNuevasMuertes"></span></p>
@@ -20,22 +24,17 @@
             <p>Nuevos casos recuperados: <span id="globalNuevosRecuperados"></span></p>
             <p>Total casos recuperados: <span id="globalTotalRecuperados"></span></p>
         </article>
-        
-    
-        <div class="container" class="datosGlobales">
+        <div class="container, datos">
             <input class="input" type="text" id="inputUser" placeholder="Ingrese el codigo de un pais, ejemplo: AR">
-            <button id="obtenerSegunUser">Obtener</button>
-    
-            <article id="datosUser">
+            <button class="btns" id="obtenerSegunUser">Obtener</button>
+
+            <article class="datosUser" id="datosUser">
                 
             </article>
         </div>
-        <p id="texto"></p>
-        <p class="datosGlobales" class="instrucciones">Para poder buscar un pais, debes ingresar el codigo de dos letras,<br> por ejemplo: AR, US, o tambien puedes escribir el nombre del pais,<br> respetando las mayusculaa, ejemplo: Argentina, Brazil.</p>
-
     </div>
-    
-    
-    
+    <div class="instrucciones">
+        <p id="texto"></p>
+    </div>
 </body>
 </html>

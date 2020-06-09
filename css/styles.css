@@ -4,10 +4,13 @@ body {
     margin: 0;
     font-family: sans-serif;
 }
+h1 {
+    margin-top: 10px;
+}
 h1, h2 {
     text-align: center;
 }
-.datosGlobales {
+.datos {
     display: flex;
     flex-direction: column;
     width: 270px;
@@ -16,11 +19,11 @@ h1, h2 {
     background-color: rgb(28, 49, 70);
     padding: 10px;
     margin: 10px;
-
 }
 .wrapper {
     display: flex;
     align-items: flex-start;
+    justify-content: center;  
 }
 
 .container {
@@ -34,7 +37,7 @@ h1, h2 {
     padding: 10px;
     margin: 10px;
 }
-#obtenerGlobales, #obtenerSegunUser {
+.btns {
     height: 40px;
     width: 100%;
     background-color: #006BDD;
@@ -44,7 +47,7 @@ h1, h2 {
     text-align: center;
     font-size: 15px;
 }
-#datosUser {
+.datosUser {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -65,6 +68,8 @@ h1, h2 {
     flex-direction: column;
 }
 .instrucciones {
-    margin-left: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
