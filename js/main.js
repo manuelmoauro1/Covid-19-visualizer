@@ -90,7 +90,7 @@ function iniciarPagina() {
                     document.getElementById("datosUser").innerHTML = " ";
                     let json = await response.json();
                     for(let i = 0; i < json.Countries.length; i++) {
-                        if (json.Countries[i].Country == inputUser1) {
+                        if (json.Countries[i].Country == inputUser) {
                             let newDiv = document.createElement("div");
                             newDiv.id = "alignDiv";
                             document.getElementById("datosUser").appendChild(newDiv);
